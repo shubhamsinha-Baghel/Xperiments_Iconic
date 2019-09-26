@@ -1,0 +1,132 @@
+ion-content{
+    
+    main{
+        display: flex;
+        height: 100%;
+    }
+    .profile_options{
+        width: 200px;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
+        -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
+        div{
+            padding: 20px 10px;
+            border-bottom:solid 1px #f6f6f6;
+            ion-avatar{
+                width: 40px;
+                height: 40px;
+            }
+            h5{
+                color: #a6a6a6;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+            ion-icon{
+                color: #a6a6a6;
+                font-size: 32px; 
+            }
+        }
+    }
+    .main_content{
+        display: flex;
+        flex: 2;
+    }
+    .right_bar{
+        flex: 0 0 290px;
+        background-color: #fff;
+        overflow: auto;
+    }
+    .cardData{
+        & ion-card-title{
+            color: #08B6CE;
+            font-size: 16px;
+        }
+        & ion-card-subtitle{
+            font-size: 13px;
+        }
+        & ion-card-content{
+            font-size: 14px;
+        }
+        & .datePost{
+            color: #08B6CE;
+            font-size: 13px;
+        }
+        & .heartIcon, & .bookMarkIcon{
+            color: #eaeaea;
+            font-size: 20px;
+            margin-left: 8px;
+            &.activeFav, &.activeBookmark{
+                color: #08B6CE;
+            }
+        }
+    }
+    .post_section{
+        flex: 1 1;
+        background-color:#fafafa;
+        overflow: auto;
+        .max-width-app{
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        ion-card{
+            background: #fff;
+           
+        }
+        .badgePlacement{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .post_picture{
+            position: relative;
+            border-bottom: solid 1px #cfcfcf;
+            & > img{
+                min-height: 150px;
+                max-height: 150px;
+            }
+            & .smallImage{
+                position: absolute;
+                bottom: -20px;
+                right: 20px;
+            }
+        }
+    }
+    .latest_post{
+        ion-content{
+            background: transparent;
+        }
+        ion-item{
+            border-bottom: none 0;
+        }
+    }
+    .lightColor{
+        color: #08B6CE;
+    }
+    .impDates{
+        & ion-label{
+            font-size: 14px;
+            color: #08B6CE;
+        }
+    }
+    .right_bar{
+        & h4{
+            margin-top: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+    .smallImage{
+        width: 40px;
+        height: 40px;
+    }
+    .tagsNew{
+        h5{
+            margin-top: 16px;
+        }
+        ion-badge{ 
+            margin-right: 8px;
+        }
+    }
+}

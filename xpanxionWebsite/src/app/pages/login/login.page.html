@@ -1,0 +1,44 @@
+<ion-content>
+    <main class="containerMain mainBg">
+        <div class="fixedWidth">
+            <section class="loginForm ion-padding">
+                <div class="loginas">Login</div>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+                    <div class="ion-padding-bottom">
+                        <ion-item class="ion-no-padding">
+                            <ion-label position="stacked">Email Id</ion-label>
+                            <ion-input type="email" formControlName="email" class="loginText"></ion-input>
+                        </ion-item>
+                        <div class="ion-text-start errorMessage" color="danger"
+                            *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.touched">
+                            <small>
+                                <ion-text color="danger">Email is Required
+                                </ion-text>
+                            </small>
+                        </div>
+                        <div class="ion-text-start errorMessage" color="danger"
+                            *ngIf="loginForm.controls.email.hasError('pattern') && loginForm.controls.email.touched">
+                            <small>
+                                <ion-text color="danger">Invalid Email
+                                </ion-text>
+                            </small></div>
+                    </div>
+                    <div class="ion-padding-bottom">
+                        <ion-item class="ion-no-padding">
+                            <ion-label position="stacked">Password</ion-label>
+                            <ion-input type="password" formControlName="password" class="password"></ion-input>
+                        </ion-item>
+                        <div class="ion-text-start errorMessage" color="danger"
+                            *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.touched">
+                            <small>
+                                <ion-text color="danger">Password is Required
+                                </ion-text>
+                            </small>
+                        </div>
+                    </div>
+                    <ion-button expand="full" class="ion-margin-top" type="submit">Submit</ion-button>
+                </form>
+            </section>
+        </div>
+    </main>
+</ion-content>
