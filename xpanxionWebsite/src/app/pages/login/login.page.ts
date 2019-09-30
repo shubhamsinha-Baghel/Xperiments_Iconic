@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
-  constructor(private router: Router, private fb: FormBuilder) { 
+  constructor(private router: Router, private fb: FormBuilder, public toastController: ToastController) { 
     this.initForm();
   }
 
@@ -23,7 +24,36 @@ export class LoginPage implements OnInit {
   }
   onLogin(value){
     if(this.loginForm.valid){
-      this.router.navigateByUrl('/landing');
+      let navigationExtras: NavigationExtras = {
+        state: {
+          type: ''
+        }
+      };
+      switch (this.loginForm.value.email){
+        case 'admin@xpanxion.com':
+          navigationExtras.state.type = 'admin';
+          this.router.navigate(['landing'], navigationExtras);
+        break;
+        case 'xite@xpanxion.com':
+          navigationExtras.state.type = 'forum';
+          this.router.navigate(['landing'], navigationExtras);
+        break;
+        case 'keerthana@xpanxion.com':
+          navigationExtras.state.type = 'user';
+          this.router.navigate(['landing'], navigationExtras);
+        break;
+        case 'pjain@xpanxion.com':
+          navigationExtras.state.type = 'user';
+          this.router.navigate(['landing'], navigationExtras);
+        break;
+        case 'sbaghel@xpanxion.com':
+          navigationExtras.state.type = 'user';
+          this.router.navigate(['landing'], navigationExtras);
+        break;
+        default:
+            this.presentToast();
+
+      }
     }else{
       this.validateAllFormFields(this.loginForm);
     }
@@ -37,5 +67,15 @@ export class LoginPage implements OnInit {
         this.validateAllFormFields(control);           
       }
     });
+  }
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'User Does not exist',
+      duration: 2000
+    });
+    toast.present();
+  }
+  ionViewDidLeave(){
+    this.loginForm.reset();
   }
 }

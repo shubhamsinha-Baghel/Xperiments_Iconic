@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavParams, ModalController} from '@ionic/angular';
 
 @Component({
@@ -7,11 +7,8 @@ import { NavParams, ModalController} from '@ionic/angular';
   styleUrls: ['./post.page.scss'],
 })
 export class PostPage implements OnInit {
-  @Input() typeUser: string;
-  pageName: any;
-  constructor(public modalCtrl: ModalController, public navParams: NavParams) { 
-    this.pageName = navParams.get('typeUser');
-  }
+
+  constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() {
   }

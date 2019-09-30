@@ -1,0 +1,41 @@
+<ion-header >
+  <ion-toolbar>
+      <ion-buttons slot="secondary">
+          <ion-button (click)="dismiss()">
+            <ion-icon slot="icon-only" name="md-close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Create A Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-item>
+        <ion-label position="stacked">Post as(Group)</ion-label>
+        <ion-select placeholder="Select">
+          <ion-select-option value="f">Xcite</ion-select-option>
+          <ion-select-option value="m">Anuraag</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Title Post</ion-label>
+        <ion-input type="text" clearOnEdit="true"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea clearOnEdit="true"></ion-textarea>
+    </ion-item>
+      <ion-item class="ion-no-padding">
+          <ion-chip>
+              <ion-avatar>
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+              </ion-avatar>
+              <ion-label>Upload Picture</ion-label>
+            </ion-chip>
+      </ion-item>    
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+      <section class="ion-text-right ion-padding-horizontal"><ion-button color="danger" shape="round">Save Post</ion-button></section>
+  </ion-toolbar>
+</ion-footer>
